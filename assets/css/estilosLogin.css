@@ -1,0 +1,111 @@
+body{
+	background-image: url(../img/fondo.jpg);
+	background-size: cover
+}
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+.bg-full::after {
+    background-color: #000a11;
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 0.75;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+.bg-full {
+    background-attachment: fixed;
+    background-color: transparent;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+#contenedor{
+	
+
+}
+
+h1{
+    color:#ff6d00;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 500;
+   text-align: center;
+   font-size: 2.5em;
+   padding-bottom:40px
+    
+}
+h2{
+   color:#ff6d00;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 500;
+   text-align: center
+    
+}
+
+.la-anim-1::after {
+    background-color: #ff6d00;
+    box-shadow: 0 0 15px #e65100, 0 0 5px #e65100;
+    content: "";
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotate(2deg) translateY(-2px);
+    transition: opacity 0.2s ease 0s, box-shadow 2s ease 4s;
+    visibility: hidden;
+    width: 100px;
+}
+
+.la-anim-1 {
+    background-color: #ff6d00;
+    height: 3px;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    transform: translate3d(-100%, 0px, 0px);
+    visibility: hidden;
+    width: 100%;
+    z-index: 9999;
+}
+* {
+    box-sizing: border-box;
+}
+
+.formulario {
+	text-align: center;
+	color: white;
+	margin-top: 30px
+}
+.form-group{
+	width:60%;
+	margin:auto
+	
+}
+.form-control{
+     background-color: #002147;
+    border-color: #002147;
+    color: white;
+    font-family: "Roboto-Regular",sans-serif;
+    font-size: 1.125em;
+    height: 50px;
+    margin-bottom: 20px
+    
+}
+
+.btn{
+	  background-color:  #ff6d00;
+	  border: #ff6d00;
+	  height: 40px;
+	  font-weight: 600;
+	  width: 140px;
+	  margin-top: 50px
+}

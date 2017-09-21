@@ -1,0 +1,118 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25/05/2017, 18:29:58
+    Author     : SE20582
+*/
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+.bg-full::after {
+    background-color: #000a11;
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 0.75;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.img-bkg{
+    background-image: url("../../assets/img/led-zeppelin.jpg")
+    
+}
+
+.bg-full {
+    background-attachment: fixed;
+    background-color: transparent;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body {
+    font-size: 16px;
+}
+
+.la-anim-1::after {
+    background-color: #ff6d00;
+    box-shadow: 0 0 15px #e65100, 0 0 5px #e65100;
+    content: "";
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: rotate(2deg) translateY(-2px);
+    transition: opacity 0.2s ease 0s, box-shadow 2s ease 4s;
+    visibility: hidden;
+    width: 100px;
+}
+
+.la-anim-1 {
+    background-color: #ff6d00;
+    height: 3px;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    transform: translate3d(-100%, 0px, 0px);
+    visibility: hidden;
+    width: 100%;
+    z-index: 9999;
+}
+* {
+    box-sizing: border-box;
+}
+h1{
+   color: darkturquoise;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 500;
+   text-align: center;
+   font-size: 2.5em
+    
+}
+h2{
+   color:#ff6d00;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 500;
+   text-align: center
+    
+}
+
+.form-group{
+    color: white
+    
+}
+
+.form-control{
+     background-color: #002147;
+    border-color: #002147;
+    color: white;
+    font-family: "Roboto-Regular",sans-serif;
+    font-size: 1.125em;
+    height: 50px;
+    margin-bottom: 20px
+    
+}
+.dropdown{
+    color: white;
+     margin-bottom: 20px;
+     
+}
+
+h3{
+   color:#ff6d00;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 500;
+   text-align: left;
+   margin-bottom: 40px;
+   margin-top: 45px
+       
+    
+}
