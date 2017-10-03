@@ -234,7 +234,8 @@ fieldset{
 /*MODAL*/
 
 .modal-content{
-	background-image: url("../img/fondosala5.jpg");
+	background-image: url("../img/fondosala4.jpg");
+            /*url("../img/fondoresultados2.jpg");*/
 	height: auto;
 	
 }
@@ -249,6 +250,13 @@ h5{
 	font-family:roboto;
 	font-size:2em
 }
+.contenedor_error{
+    color: red;
+    font-weight: 800;
+
+}
+
+
 
 .modal-footer {
     border-top:none
