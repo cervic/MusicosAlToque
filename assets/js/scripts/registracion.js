@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$(document).ready(function(){    
-    $('#btnRegistrarse').click(function(){            
+$(document).ready(function(){   
+    $("#frmRegistracion").on('submit', function(evt){
+        evt.preventDefault();  
         $.ajax({                        
             type: 'POST',
             url: $( '#frmRegistracion' ).attr( 'action' ),
@@ -22,6 +23,25 @@ $(document).ready(function(){
             }
         });
     });
+    
+    /*$('#btnRegistrarse').click(function(){            
+        $.ajax({                        
+            type: 'POST',
+            url: $( '#frmRegistracion' ).attr( 'action' ),
+            dataType: 'json',
+            data: $('#frmRegistracion').serialize(),
+            cache: false,
+            success:function(data){
+                $( ".contenedor_error" ).empty();
+                if(!data.isValid)
+                    showErrors(data);
+                else{
+                    cleanForm('frmRegistracion');
+                    $('#LayoutModal').modal('toggle');
+                }                     
+            }
+        });
+    });*/
 });
 
 function showErrors(data){
