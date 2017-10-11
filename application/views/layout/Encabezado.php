@@ -29,7 +29,7 @@ and open the template in the editor.
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo base_url("assets/font-awesome/css/font-awesome.min.css");?>"/>
         <style>
             @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700i,900');
         </style> 

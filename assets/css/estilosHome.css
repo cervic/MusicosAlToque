@@ -186,7 +186,8 @@ fieldset{
 	border: 1px solid #333;
 	border-radius: 5px;
 	padding-left:40px;
-	border-right:1px solid
+	border-right:1px solid;
+        width: max-content;
 	
 }
 #inputsearch #btn-search{
@@ -201,6 +202,9 @@ fieldset{
 	color:#666;
 	border-right: 1px solid grey;
 	
+}
+.fa fa-search{
+    z-index: 3
 }
 
 #country_name{
