@@ -9,7 +9,7 @@
             <input type="input" class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombre" required>
         </div>        
     </div>
-<div class="contenedor_error" id="errorNombre" style="border-style: solid; border-color: red;"></div>
+                  
     <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">Apellido</label>
         <div class="col-sm-10">

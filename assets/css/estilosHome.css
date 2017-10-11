@@ -186,7 +186,8 @@ fieldset{
 	border: 1px solid #333;
 	border-radius: 5px;
 	padding-left:40px;
-	border-right:1px solid
+	border-right:1px solid;
+        width: max-content;
 	
 }
 #inputsearch #btn-search{
@@ -201,6 +202,9 @@ fieldset{
 	color:#666;
 	border-right: 1px solid grey;
 	
+}
+.fa fa-search{
+    z-index: 3
 }
 
 #country_name{
@@ -234,7 +238,8 @@ fieldset{
 /*MODAL*/
 
 .modal-content{
-	background-image: url("../img/fondosala5.jpg");
+	background-image: url("../img/fondosala4.jpg");
+            /*url("../img/fondoresultados2.jpg");*/
 	height: auto;
 	
 }
@@ -249,6 +254,13 @@ h5{
 	font-family:roboto;
 	font-size:2em
 }
+.contenedor_error{
+    color: red;
+    font-weight: 800;
+
+}
+
+
 
 .modal-footer {
     border-top:none
