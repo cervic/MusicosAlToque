@@ -21,4 +21,9 @@ class HomeModel extends CI_Model {
         $this->load->library('Provincia');
         return $this->provincia->getProvincias();
     }
+    
+    public function getInstrumentos(){
+        $this->load->library('Instrumento');
+        return $this->instrumento->getInstrumentos();
+    }
 }

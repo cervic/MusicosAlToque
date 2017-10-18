@@ -16,6 +16,21 @@ $(document).ready(function (){
         data: data
      });
      
+    // Llamada Ajax para traer los Instrumentos  
+    $.ajax({
+      url: $("#urlInstrumentos").val(),
+      dataType: 'json',
+      async: false,
+      success: function(result) {
+          data = result;
+      }
+    }); 
+    
+    // Se setean los Instrumentos
+    $("#cboInstrumento").select2({
+        data: data
+     });
+     
     //Carga la partialView de registración en el modal PopUp
     $('#btnPublicacionMusico').click(function(){
         $.ajax({

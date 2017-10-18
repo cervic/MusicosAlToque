@@ -3,7 +3,10 @@
     <h1>Buscando Músicos?</h1>		
     <form id="buscador" >
         <fieldset>
-            <input type="search" id="inputsearch" placeholder="Buscar...">
+            <!--input type="search" id="inputsearch" placeholder="Buscar..."-->
+            <select id="cboInstrumento" class="select2" data-placeholder="Instrumento" style="width:200px">
+                <option value=""></option>
+            </select>
             <!-- prueba dropdown-->	
             <!--<label for="country_name"></label><input id="country_name" name="country_name" type="text" list="country" placeholder="Localidad"/>-->
             <select id="cboLocalidad" class="select2"  data-placeholder="Localidad" style="width: 200px">
@@ -41,4 +44,5 @@
     </div>            
 </section>
 <input type="hidden" id="urlProvincias" value="<?php echo base_url('Home/getProvincias'); ?>">
+<input type="hidden" id="urlInstrumentos" value="<?php echo base_url('Home/getInstrumentos'); ?>">
 <script src="<?php echo base_url('assets/js/scripts/home.js'); ?>" type="text/javascript"></script>
