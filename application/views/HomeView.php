@@ -1,7 +1,7 @@
 
 <section class="busqueda" >		
     <h1>Buscando Músicos?</h1>		
-    <form id="buscador" >
+    <form id="buscador" action="<?php echo base_url('Resultados/index')?>" >
         <fieldset>
             <!--input type="search" id="inputsearch" placeholder="Buscar..."-->
             <select id="cboInstrumento" class="select2" data-placeholder="Instrumento" style="width:200px">
@@ -37,7 +37,7 @@
                     <h4 class="card-title">Bandas</h4>
                     <p class="card-text">Encontra bandas buscando musicos, conoce sus preferencias y lugar de ensayo. Postulate!</p>
                     <!--<a href="#" class="btn btn-primary">Publicar </a>-->
-                    <button  type="button" class="btn btn-default" data-toggle="modal" data-target="#LayoutModal">Publicar Búsqueda</button>
+                    <button  id="btnPublicacionBanda" type="button" class="btn btn-default" data-toggle="modal" data-target="#LayoutModal">Publicar Búsqueda</button>
                     </div>
             </div>
         </div>
@@ -45,4 +45,7 @@
 </section>
 <input type="hidden" id="urlProvincias" value="<?php echo base_url('Home/getProvincias'); ?>">
 <input type="hidden" id="urlInstrumentos" value="<?php echo base_url('Home/getInstrumentos'); ?>">
+<input type="hidden" id="urlPublicacionMusicoView" value="<?php echo base_url('Publicacion/index'); ?>">
+<input type="hidden" id="urlPublicacionBandaView" value="<?php echo base_url('Publicacion/banda'); ?>">
+<input type="hidden" id="urlBuscarMusicosView" value="<?php echo base_url('Resultados/index'); ?>">
 <script src="<?php echo base_url('assets/js/scripts/home.js'); ?>" type="text/javascript"></script>

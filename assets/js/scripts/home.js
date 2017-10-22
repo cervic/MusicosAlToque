@@ -35,16 +35,30 @@ $(document).ready(function (){
     $('#btnPublicacionMusico').click(function(){
         $.ajax({
             type    : 'POST', 
-            url     : $('#urlRegistracionView').val(),
+            url     : $('#urlPublicacionMusicoView').val(),
             cache   : false,
             success : function(data){ 
                 if(data){
-                    $('#modalLabel').text('Registración');
+                    $('#modalLabel').text('Músico');
                     $('#form-content').html(data);
                 }
             }
         });
     });
+    
+    $('#btnPublicacionBanda').click(function(){
+        $.ajax({
+            type    : 'POST', 
+            url     : $('#urlPublicacionBandaView').val(),
+            cache   : false,
+            success : function(data){ 
+                if(data){
+                    $('#modalLabel').text('Banda');
+                    $('#form-content').html(data);
+                }
+            }
+        });
+    });    
 });       
         
 
