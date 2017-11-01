@@ -1,15 +1,6 @@
 $(document).ready(function (){   
-    var data = new Array();
-    
-    // Llamada Ajax para traer las provincias  
-    $.ajax({
-      url: $("#urlProvincias").val(),
-      dataType: 'json',
-      async: false,
-      success: function(result) {
-          data = result;
-      }
-    });       
+    // Llamada Ajax para traer las provincias
+    var data = getDataByAjax($("#urlProvincias").val());       
     
     // Se setean las provincias
     $("#cboLocalidad").select2({
@@ -17,14 +8,7 @@ $(document).ready(function (){
      });
      
     // Llamada Ajax para traer los Instrumentos  
-    $.ajax({
-      url: $("#urlInstrumentos").val(),
-      dataType: 'json',
-      async: false,
-      success: function(result) {
-          data = result;
-      }
-    }); 
+    data = getDataByAjax($("#urlInstrumentos").val());
     
     // Se setean los Instrumentos
     $("#cboInstrumento").select2({
@@ -35,7 +19,7 @@ $(document).ready(function (){
     $('#btnPublicacionMusico').click(function(){
         $.ajax({
             type    : 'POST', 
-            url     : $('#urlRegistracionView').val(),
+            url     : $('#urlPublicacionView').val(),
             cache   : false,
             success : function(data){ 
                 if(data){

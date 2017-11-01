@@ -13,7 +13,7 @@ $(document).ready(function(){
             cache   : false,
             success : function(data){ 
                 if(data){
-                    $('#modalLabel').text('Registración');
+                    $('#modalLabel').text('');
                     $('#form-content').html(data);
                 }
             }

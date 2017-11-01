@@ -45,4 +45,5 @@
 </section>
 <input type="hidden" id="urlProvincias" value="<?php echo base_url('Home/getProvincias'); ?>">
 <input type="hidden" id="urlInstrumentos" value="<?php echo base_url('Home/getInstrumentos'); ?>">
+<input type="hidden" id="">
 <script src="<?php echo base_url('assets/js/scripts/home.js'); ?>" type="text/javascript"></script>

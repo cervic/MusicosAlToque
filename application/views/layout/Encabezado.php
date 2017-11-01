@@ -20,11 +20,16 @@ and open the template in the editor.
     <link href="<?php echo base_url('assets/css/bootstrap.css'); ?>" rel="stylesheet"/>
     <link href="<?php echo base_url('assets/css/bootstrap-chosen.css'); ?>" rel="stylesheet" type="text/css"/>
     <link href="<?php echo base_url('assets/css/estilosHome.css'); ?>" rel="stylesheet"/>
+    <link href="<?php echo base_url('assets/css/estilosBar.css'); ?>" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+    
     
     <script src="https://code.jquery.com/jquery-1.12.4.js"> </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+    <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+    
+    
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

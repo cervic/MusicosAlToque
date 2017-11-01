@@ -11,4 +11,18 @@ function cleanForm(form){
     .removeAttr('selected');
 }
 
+function getDataByAjax(url){
+    var data = null;
+    $.ajax({
+      url: url,
+      dataType: 'json',
+      async: false,
+      success: function(result) {
+          data = result;
+      }
+    });
+    
+    return data;
+}
+
 
