@@ -54,7 +54,7 @@ and open the template in the editor.
                                   <span class="icon-bar"></span>
                                   <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">MUSICOS AL TOQUE</a>
+                            <a class="navbar-brand" href="<?php echo base_url('Home/index')?>">MUSICOS AL TOQUE</a>
                         </div>
 
                           <!-- Collect the nav links, forms, and other content for toggling -->
