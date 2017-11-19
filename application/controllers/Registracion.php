@@ -13,8 +13,10 @@ class Registracion extends CI_Controller{
         parent::__construct();
     }
     
-    public function index(){        
+    public function index(){
+        $this->load->view('layout/Encabezado');
         $this->load->view('RegistracionView');
+        $this->load->view('layout/PiePagina');
     }
     
     public function guardar(){        
