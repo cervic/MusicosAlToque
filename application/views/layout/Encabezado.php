@@ -20,14 +20,25 @@ and open the template in the editor.
     <link href="<?php echo base_url('assets/css/bootstrap.css'); ?>" rel="stylesheet"/>
     <link href="<?php echo base_url('assets/css/bootstrap-chosen.css'); ?>" rel="stylesheet" type="text/css"/>
     <link href="<?php echo base_url('assets/css/estilosHome.css'); ?>" rel="stylesheet"/>
-    <link href="<?php echo base_url('assets/css/estilosBar.css'); ?>" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
-    
+    <link rel="stylesheet" href="<?php echo base_url('assets/font-awesome/css/font-awesome.min.css') ?>" />
+    <!--script src="<?php //echo base_url('assets/css/estilos.css'); ?>" type="text/javascript"></script-->
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/form-elements.css');?>" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/estilosRegistracion.css')?>" />
+    <link rel="shortcut icon" href="<?php echo base_url('assets/ico/favicon.png');?>" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
     
     <script src="https://code.jquery.com/jquery-1.12.4.js"> </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
-    <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" type="text/javascript"></script>
+    <script src="<?php echo base_url('assets/js/jquery.backstretch.min.js'); ?>" type="text/javascript" ></script>
+    <script src="<?php echo base_url('assets/js/retina-1.1.0.js'); ?>" type="text/javascript"></script>    
+    <script src="<?php echo base_url('assets/js/progressRegistration.js'); ?>" type="text/javascript"></script>
+    
     
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -69,8 +80,7 @@ and open the template in the editor.
                                   <!--<div class="form-group">
                                     <input type="text" class="form-control" placeholder="Search">
                                   </div>-->
-
-                            </form>
+                            
                             <?php 
                                 if(isset($this->session->userdata['logged_in'])){
                                     $user_data = $this->session->userdata['logged_in'];      
@@ -80,11 +90,15 @@ and open the template in the editor.
                                     echo '</p>';
                                 }else{
                                     echo "<ul class='nav navbar-nav navbar-right'>
-                                            <button  class='btn btn-default' data-toggle='modal' data-target='#LayoutModal' id='btnModalRegistracion'> Registrate</button>
+                                            <a class='btn btn-default' href='";
+                                            echo base_url("Registracion/index"); 
+                                            echo "'>Registrate</a>
+                                            <!--button  class='btn btn-default' data-toggle='modal' data-target='#LayoutModal' id='btnModalRegistracion'> Registrate</button-->
                                             <button  class='btn btn-default' data-toggle='modal' data-target='#LayoutModal' id='btnModalLogin'> Iniciar Sesión</button>                                  
                                          </ul>";
                                 }
                             ?>
+                            </form>
                             <input type="hidden" id="urlCerrarSession" value="<?php echo base_url("Login/cerrar_session"); ?>">
                             <input type="hidden" id="urlHome" value="<?php echo base_url("Home/index"); ?>">
                             <!--<ul class="nav navbar-nav navbar-right">
