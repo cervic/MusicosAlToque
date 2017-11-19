@@ -321,18 +321,30 @@ h5{
 
 .resultados{
 	background-image: url("../img/fondoresultados2.jpg");
-  	height:600px;
+  	height:auto
 
 }
 #resultados{
 	background-color: #000a11;
-	height:400px;
+	height:auto;
 	width: 75%;
-	margin:auto
+	margin:auto;
+        color: #ff6d00;
+   
 	
 }
+.media{
+    border-bottom: 1px solid grey;
+    padding-bottom: 5px;
+    margin-bottom: 5px
+}
 
-
+footer{
+    height: 200px;
+    width: 100%;
+    background-color: #666
+    
+}
 
 
 
