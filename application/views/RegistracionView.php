@@ -43,11 +43,10 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>Bootstrap</strong> Multi Step Registration Form</h1>
+                            <h1><strong>MUSICOS AL TOQUE</strong> Registrate</h1>
                             <div class="description">
                             	<p>
-	                            	This is a free responsive multi-step registration form made with Bootstrap. 
-	                            	Download it on <a href="http://azmind.com"><strong>AZMIND</strong></a>, customize and use it as you like!
+	                            	Completa tus datos para comenzar a tener contacto con otros músicos como vos en <a href="http://azmind.com"><strong>Musicos Altoque</strong></a>!
                             	</p>
                             </div>
                         </div>
@@ -60,8 +59,8 @@
                         		<fieldset>
 		                        	<div class="form-top">
 		                        		<div class="form-top-left">
-		                        			<h3>Step 1 / 3</h3>
-		                            		<p>Tell us who you are:</p>
+		                        			<h3>Paso 1 / 3</h3>
+		                            		<p>Contanos quién sos:</p>
 		                        		</div>
 		                        		<div class="form-top-right">
 		                        			<i class="fa fa-user"></i>
@@ -69,27 +68,27 @@
 		                            </div>
 		                            <div class="form-bottom">
 				                    	<div class="form-group">
-				                    		<label class="sr-only" for="form-first-name">First name</label>
-				                        	<input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+				                    		<label class="sr-only" for="form-first-name">Nombre</label>
+				                        	<input type="text" name="form-first-name" placeholder="Nombre..." class="form-first-name form-control" id="form-first-name">
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-last-name">Last name</label>
-				                        	<input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
+				                        	<label class="sr-only" for="form-last-name">Apellido</label>
+				                        	<input type="text" name="form-last-name" placeholder="Apellido..." class="form-last-name form-control" id="form-last-name">
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-about-yourself">About yourself</label>
-				                        	<textarea name="form-about-yourself" placeholder="About yourself..." 
+				                        	<label class="sr-only" for="form-about-yourself">De donde sos</label>
+				                        	<textarea name="form-about-yourself" placeholder="De dónde Sos." 
 				                        				class="form-about-yourself form-control" id="form-about-yourself"></textarea>
 				                        </div>
-				                        <button type="button" class="btn btn-next">Next</button>
+				                        <button type="button" class="btn btn-next">Siguente</button>
 				                    </div>
 			                    </fieldset>
 			                    
 			                    <fieldset>
 		                        	<div class="form-top">
 		                        		<div class="form-top-left">
-		                        			<h3>Step 2 / 3</h3>
-		                            		<p>Set up your account:</p>
+		                        			<h3>Paso 2 / 3</h3>
+		                            		<p>Completa los datos de tu cuenta:</p>
 		                        		</div>
 		                        		<div class="form-top-right">
 		                        			<i class="fa fa-key"></i>
@@ -105,20 +104,20 @@
 				                        	<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-repeat-password">Repeat password</label>
-				                        	<input type="password" name="form-repeat-password" placeholder="Repeat password..." 
+				                        	<label class="sr-only" for="form-repeat-password">Repetir password</label>
+				                        	<input type="password" name="form-repeat-password" placeholder="Repetir password..." 
 				                        				class="form-repeat-password form-control" id="form-repeat-password">
 				                        </div>
-				                        <button type="button" class="btn btn-previous">Previous</button>
-				                        <button type="button" class="btn btn-next">Next</button>
+				                        <button type="button" class="btn btn-previous">Atras</button>
+				                        <button type="button" class="btn btn-next">Siguiente</button>
 				                    </div>
 			                    </fieldset>
 			                    
 			                    <fieldset>
 		                        	<div class="form-top">
 		                        		<div class="form-top-left">
-		                        			<h3>Step 3 / 3</h3>
-		                            		<p>Social media profiles:</p>
+		                        			<h3>Paso 3 / 3</h3>
+		                            		<p>Perfil de Musico</p>
 		                        		</div>
 		                        		<div class="form-top-right">
 		                        			<i class="fa fa-twitter"></i>
@@ -126,19 +125,24 @@
 		                            </div>
 		                            <div class="form-bottom">
 				                    	<div class="form-group">
-				                    		<label class="sr-only" for="form-facebook">Facebook</label>
-				                        	<input type="text" name="form-facebook" placeholder="Facebook..." class="form-facebook form-control" id="form-facebook">
+				                    		<label class="sr-only" for="form-facebook">Instrumento</label>
+				                        	<input type="text" name="form-facebook" placeholder="Instrumento" class="form-facebook form-control" id="form-facebook">
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-twitter">Twitter</label>
-				                        	<input type="text" name="form-twitter" placeholder="Twitter..." class="form-twitter form-control" id="form-twitter">
+				                        	<label class="sr-only" for="form-twitter">Edad</label>
+				                        	<input type="text" name="form-twitter" placeholder="Edad" class="form-twitter form-control" id="form-twitter">
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-google-plus">Google plus</label>
+				                        	<label class="sr-only" for="form-google-plus">Estilo Musical</label>
 				                        	<input type="text" name="form-google-plus" placeholder="Google plus..." class="form-google-plus form-control" id="form-google-plus">
 				                        </div>
-				                        <button type="button" class="btn btn-previous">Previous</button>
-				                        <button type="submit" class="btn">Sign me up!</button>
+                                                
+				                        <div class="form-group">
+				                        	<label class="sr-only" for="form-google-plus">Artistas/Bandas de tu gusto</label>
+				                        	<input type="text" name="form-google-plus" placeholder="Google plus..." class="form-google-plus form-control" id="form-google-plus">
+				                        </div>
+				                        <button type="button" class="btn btn-previous">Atras</button>
+				                        <button type="submit" class="btn">Registrarme!</button>
 				                    </div>
 			                    </fieldset>
 		                    

@@ -145,11 +145,12 @@ a, a:hover, a:focus {
 }
 
 h1, h2 {
-	margin-top: 10px;
-	font-size: 38px;
+    margin-top: 10px;
+    font-size: 38px;
     font-weight: 100;
-    color: #555;
+    color: white;
     line-height: 50px;
+    font-weight: 800
 }
 
 h3 {
@@ -229,7 +230,7 @@ ul.navbar-nav {
 .navbar-inverse ul.navbar-nav li .li-social a:focus { border: 0; color: #19b9e7; }
 
 .navbar-brand {
-	width: 123px;
+	width: 135px;
 	background: url(../img/logo.png) left center no-repeat;
 	text-indent: -99999px;
 }

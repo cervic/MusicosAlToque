@@ -17,13 +17,14 @@ and open the template in the editor.
 }
 .navbar-brand{
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-weight:700
+	font-weight:700;
+        width: 135px
 	
 }
 .navbar{
 	border-radius: 0 0 5px 0px;
 
-	margin-bottom: -20px;
+	margin-bottom: -10px;
 	}
 .navbar-nav li:hover{
 	background: #F97357;	
@@ -174,7 +175,7 @@ h3{
 
 #buscador {
 	
-	width:450px;
+	/*width:450px;*/
 	margin: 0 auto;
 	
 	
@@ -348,3 +349,23 @@ footer{
 
 
 
+/* ESTILOS PARA REGISTRACION Y BOTONES LOGIN*/
+
+#btnModalLogin{
+    background: #ff6d00
+}
+
+#btnPublicacionMusico{
+    background: #ff6d00;
+    width: 100%
+}
+
+#btnPublicacionBanda{
+    background: #ff6d00;
+    width: 100%
+}
+
+.navbar-left {
+    float: right !important;
+    margin-right: -15px;
+}

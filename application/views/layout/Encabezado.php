@@ -17,13 +17,15 @@ and open the template in the editor.
     <title>Músicos al Toque</title>
 
     <!-- Bootstrap -->
+    
     <link href="<?php echo base_url('assets/css/bootstrap.css'); ?>" rel="stylesheet"/>
-    <link href="<?php echo base_url('assets/css/bootstrap-chosen.css'); ?>" rel="stylesheet" type="text/css"/>
-    <link href="<?php echo base_url('assets/css/estilosHome.css'); ?>" rel="stylesheet"/>
+   <!-- <link href="<?php echo base_url('assets/css/bootstrap-chosen.css'); ?>" rel="stylesheet" type="text/css"/>-->
+   
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="<?php echo base_url('assets/font-awesome/css/font-awesome.min.css') ?>" />
     <!--script src="<?php //echo base_url('assets/css/estilos.css'); ?>" type="text/javascript"></script-->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/form-elements.css');?>" />
+    <link href="<?php echo base_url('assets/css/estilosHome.css'); ?>" rel="stylesheet"/>
     <link rel="stylesheet" href="<?php echo base_url('assets/css/estilosRegistracion.css')?>" />
     <link rel="shortcut icon" href="<?php echo base_url('assets/ico/favicon.png');?>" />
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
