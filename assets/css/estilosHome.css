@@ -187,8 +187,8 @@ fieldset{
 	border: 1px solid #333;
 	border-radius: 5px;
 	padding-left:40px;
-	border-right:1px solid;
-        width: max-content;
+	/*border-right:1px solid;*/
+        width: 90%;
 	
 }
 #inputsearch #btn-search{
