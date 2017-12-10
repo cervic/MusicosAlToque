@@ -6,10 +6,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2 text">
-                    <h1><strong>MUSICOS AL TOQUE</strong> Registrate</h1>
+                    <h1><strong>MUSICOS AL TOQUE</strong> REGISTRATE</h1>
                     <div class="description">
                         <p>
-                                Completa tus datos para comenzar a tener contacto con otros músicos como vos en <a href="http://azmind.com"><strong>Musicos Altoque</strong></a>!
+                                Completa tus datos para comenzar a tener contacto con otros músicos como vos en <a href="http://azmind.com"><strong>Musicos Al Toque</strong></a>!
                         </p>
                     </div>
                 </div>
@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3 form-box">                        	
                     <form role="form" action="" method="post" class="registration-form">
-                        <fieldset>
+                        <fieldset class="fieldsetWidth">
                                 <div class="form-top">
                                         <div class="form-top-left">
                                                 <h3>Paso 1 / 3</h3>
@@ -47,7 +47,7 @@
                                         <button type="button" class="btn btn-next">Siguente</button>
                                     </div>
                             </fieldset>
-                            <fieldset>
+                            <fieldset class="fieldsetWidth">
                                 <div class="form-top">
                                         <div class="form-top-left">
                                                 <h3>Paso 2 / 3</h3>
@@ -75,7 +75,7 @@
                                     <button type="button" class="btn btn-next">Siguiente</button>
                                 </div>
                             </fieldset>
-                            <fieldset>
+                            <fieldset class="fieldsetWidth">
                                 <div class="form-top">
                                     <div class="form-top-left">
                                             <h3>Paso 3 / 3</h3>
