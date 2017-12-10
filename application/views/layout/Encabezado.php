@@ -26,7 +26,7 @@ and open the template in the editor.
     <!--script src="<?php //echo base_url('assets/css/estilos.css'); ?>" type="text/javascript"></script-->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/form-elements.css');?>" />
     <link href="<?php echo base_url('assets/css/estilosHome.css'); ?>" rel="stylesheet"/>
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/estilosRegistracion.css')?>" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/estilosRegistracion.css')."?".date("D M d, Y G:i")?>" />
     <link rel="shortcut icon" href="<?php echo base_url('assets/ico/favicon.png');?>" />
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
@@ -39,7 +39,7 @@ and open the template in the editor.
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" type="text/javascript"></script>
     <script src="<?php echo base_url('assets/js/jquery.backstretch.min.js'); ?>" type="text/javascript" ></script>
     <script src="<?php echo base_url('assets/js/retina-1.1.0.js'); ?>" type="text/javascript"></script>    
-    <script src="<?php echo base_url('assets/js/progressRegistration.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo base_url('assets/js/progressRegistration.js')."?".date("D M d, Y G:i"); ?>" type="text/javascript"></script>
     
     
     
