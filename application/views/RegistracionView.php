@@ -38,8 +38,11 @@
                                         </div>
                                         <div class="form-group">
                                                 <label class="sr-only" for="form-about-yourself">De donde sos</label>
-                                                <textarea name="form-about-yourself" placeholder="De dónde Sos." 
-                                                                        class="form-about-yourself form-control" id="form-about-yourself"></textarea>
+                                                <select name="form-localidad" id="form-localidad" class="form-control select2" style="width: 200px" data-placeholder="De donde sos">
+                                                    <option value=""></option>
+                                                </select>
+                                                <!--textarea name="form-about-yourself" placeholder="De dónde Sos." 
+                                                                        class="form-about-yourself form-control" id="form-about-yourself"></textarea-->
                                         </div>
                                         <button type="button" class="btn btn-next">Siguente</button>
                                     </div>
@@ -110,9 +113,10 @@
             </div>
         </div>            
     </div>    
+    <input type="hidden" id="urlProvincias" value="<?php echo base_url('registracion/getProvincias'); ?>">
 <?php //echo form_close(); ?>
-<!--script src="<?php //echo base_url('assets/js/scripts/registracion.js')."?".date("D M d, Y G:i")?>" type="text/javascript"></script-->     
-<script src="<?php //echo base_url('assets/js/progressRegistration.js'); ?>" type="text/javascript"></script>
+<script src="<?php echo base_url('assets/js/progressRegistration.js')."?".date("D M d, Y G:i"); ?>" type="text/javascript"></script>
+<script src="<?php echo base_url('assets/js/scripts/registracion.js')."?".date("D M d, Y G:i"); ?>" type="text/javascript"></script>
 
 
                     

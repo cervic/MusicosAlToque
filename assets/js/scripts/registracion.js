@@ -24,6 +24,12 @@ $(document).ready(function(){
         });
     });
     
+    var data = getDataByAjax($("#urlProvincias").val());       
+    // Se setean las provincias
+    $("#form-localidad").select2({
+        data: data
+     });
+     
     /*$('#btnRegistrarse').click(function(){            
         $.ajax({                        
             type: 'POST',

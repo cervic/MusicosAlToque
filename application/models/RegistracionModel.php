@@ -7,6 +7,11 @@ class RegistracionModel extends CI_Model{
         parent::__construct();
     }
     
+    public function getProvincias(){
+        $this->load->library('Provincia');
+        return $this->provincia->getProvincias();
+    }
+    
     public function guardar($usuario){
         $this->load->library('Usuario');
         

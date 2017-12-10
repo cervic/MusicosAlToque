@@ -19,6 +19,19 @@ class Registracion extends CI_Controller{
         $this->load->view('layout/PiePagina');
     }
     
+    public function getProvincias(){
+        $this->load->model('RegistracionModel');
+        $result = $this->RegistracionModel->getProvincias();
+        // creamos un array que pueda leer el select2
+        $data = array();
+        foreach ($result as $value) {
+            $item['id'] = $value->id;
+            $item['text'] = $value->nombre;
+            array_push($data,$item);
+        }
+        echo json_encode($data);
+    }
+    
     public function guardar(){        
         $this->load->helper('form');
         $this->load->model('RegistracionModel');  
