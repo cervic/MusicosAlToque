@@ -312,7 +312,9 @@ form .form-bottom button.btn {
 form .form-bottom .input-error {
 	border-color: red;
 }
-
+form .form-bottom .input-error {
+	border-color: red;
+}
 form.registration-form fieldset {
 	display: none;
 }

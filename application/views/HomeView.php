@@ -21,13 +21,13 @@
 </section>
 <section>
     <div class="row">
-        <div class="col-sm-6">
+       <!-- <div class="col-sm-6">
             <div class="card">
               <div class="card-body">
                     <h4 class="card-title">Músicos</h4>
                     <p class="card-text">Registrate y empeza a tener contacto con musicos buscando comenzar un proyecto o sumarse a uno ya sobre ruedas</p>
                     <!--<a href="#" class="btn btn-primary">Publicar</a>-->
-                    <button  id="btnPublicacionMusico" type="button" class="btn btn-default" data-toggle="modal" data-target="#LayoutModal">Publicar Búsqueda</button>
+         <!--           <button  id="btnPublicacionMusico" type="button" class="btn btn-default" data-toggle="modal" data-target="#LayoutModal">Publicar Búsqueda</button>
               </div>
             </div>
         </div>
@@ -37,10 +37,10 @@
                     <h4 class="card-title">Bandas</h4>
                     <p class="card-text">Encontra bandas buscando musicos, conoce sus preferencias y lugar de ensayo. Postulate!</p>
                     <!--<a href="#" class="btn btn-primary">Publicar </a>-->
-                    <button  id="btnPublicacionBanda" type="button" class="btn btn-default" data-toggle="modal" data-target="#LayoutModal">Publicar Búsqueda</button>
+                  <!--  <button  id="btnPublicacionBanda" type="button" class="btn btn-default" data-toggle="modal" data-target="#LayoutModal">Publicar Búsqueda</button>
                     </div>
             </div>
-        </div>
+        </div>-->
     </div>            
 </section>
 <input type="hidden" id="urlProvincias" value="<?php echo base_url('Home/getProvincias'); ?>">
