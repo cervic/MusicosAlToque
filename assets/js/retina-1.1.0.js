@@ -34,8 +34,7 @@
 
     context.onload = function() {
       var images = document.getElementsByTagName("img"), retinaImages = [], i, image;
-      //alert(images);
-      console.log(images);
+
       for (i = 0; i < images.length; i++) {
         image = images[i];
         image.currentSrc = "http://localhost/MusicosAlToque/assets/img/backgrounds/1.jpg"
