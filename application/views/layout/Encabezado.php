@@ -39,7 +39,7 @@ and open the template in the editor.
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" type="text/javascript"></script>
     <script src="<?php echo base_url('assets/js/jquery.backstretch.min.js'); ?>" type="text/javascript" ></script>
     <script src="<?php echo base_url('assets/js/retina-1.1.0.js'); ?>" type="text/javascript"></script>    
-    <script src="<?php echo base_url('assets/js/progressRegistration.js')."?".date("D M d, Y G:i"); ?>" type="text/javascript"></script>
+   
     
     
     
