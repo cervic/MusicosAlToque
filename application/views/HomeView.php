@@ -21,26 +21,39 @@
 </section>
 <section>
     <div class="row">
-       <!-- <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                    <h4 class="card-title">Músicos</h4>
-                    <p class="card-text">Registrate y empeza a tener contacto con musicos buscando comenzar un proyecto o sumarse a uno ya sobre ruedas</p>
-                    <!--<a href="#" class="btn btn-primary">Publicar</a>-->
-         <!--           <button  id="btnPublicacionMusico" type="button" class="btn btn-default" data-toggle="modal" data-target="#LayoutModal">Publicar Búsqueda</button>
-              </div>
+        <h2>Publicar Búsqueda</h2>
+        <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Correo Electronico</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
             </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                    <div class="card-body">
-                    <h4 class="card-title">Bandas</h4>
-                    <p class="card-text">Encontra bandas buscando musicos, conoce sus preferencias y lugar de ensayo. Postulate!</p>
-                    <!--<a href="#" class="btn btn-primary">Publicar </a>-->
-                  <!--  <button  id="btnPublicacionBanda" type="button" class="btn btn-default" data-toggle="modal" data-target="#LayoutModal">Publicar Búsqueda</button>
-                    </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Instrumento</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
             </div>
-        </div>-->
+            <div class="form-group">
+              <label for="exampleFormControlSelect2">Localidad</label>
+              <select multiple class="form-control" id="exampleFormControlSelect2">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Descripcion de la Búsqueda</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+          </form>
+        
+        
     </div>            
 </section>
 <input type="hidden" id="urlProvincias" value="<?php echo base_url('Home/getProvincias'); ?>">
