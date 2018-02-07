@@ -38,9 +38,19 @@
                                         </div>
                                         <div class="form-group">
                                                 <label class="sr-only" for="form-about-yourself">De donde sos</label>
-                                                <select name="form-localidad" id="form-localidad" class="form-control select2" style="width: 200px" data-placeholder="De donde sos">
+                                                <select name="form-provincia" id="form-provincia" class="form-control select2" style="width: 200px" data-placeholder="Provincia">
                                                     <option value=""></option>
                                                 </select>
+                                                <div id="contenedor-departamento" style='display:none'>
+                                                    <select name="form-departamento" id="form-departamento" class="form-control select2" style="width: 200px" data-placeholder="Departamento" >
+                                                        <option value=""></option>
+                                                    </select>
+                                                </div>
+                                                <div id="contenedor-localidad" style='display:none'>
+                                                    <select name="form-localidad" id="form-localidad" class="form-control select2" style="width: 200px" data-placeholder="Localidad" >
+                                                        <option value=""></option>
+                                                    </select>
+                                                </div>
                                                 <!--textarea name="form-about-yourself" placeholder="De dónde Sos." 
                                                                         class="form-about-yourself form-control" id="form-about-yourself"></textarea-->
                                         </div>
@@ -114,6 +124,8 @@
         </div>            
     </div>    
     <input type="hidden" id="urlProvincias" value="<?php echo base_url('registracion/getProvincias'); ?>">
+    <input type="hidden" id="urlDepartamentos" value="<?php echo base_url('registracion/getDepartamentos'); ?>">
+    <input type="hidden" id="urlLocalidades" value="<?php echo base_url('registracion/getLocalidades'); ?>">
 <?php //echo form_close(); ?>
 <script src="<?php echo base_url('assets/js/progressRegistration.js')."?".date("D M d, Y G:i"); ?>" type="text/javascript"></script>
 <script src="<?php echo base_url('assets/js/scripts/registracion.js')."?".date("D M d, Y G:i"); ?>" type="text/javascript"></script>

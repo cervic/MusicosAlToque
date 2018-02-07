@@ -9,8 +9,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Registracion extends CI_Controller{        
     
-    function __constructor(){
+    function __construct(){
         parent::__construct();
+        $this->load->model('RegistracionModel');
     }
     
     public function index(){
@@ -19,8 +20,7 @@ class Registracion extends CI_Controller{
         $this->load->view('layout/PiePagina');
     }
     
-    public function getProvincias(){
-        $this->load->model('RegistracionModel');
+    public function getProvincias(){        
         $result = $this->RegistracionModel->getProvincias();
         // creamos un array que pueda leer el select2
         $data = array();
@@ -28,6 +28,32 @@ class Registracion extends CI_Controller{
             $item['id'] = $value->id;
             $item['text'] = $value->nombre;
             array_push($data,$item);
+        }
+        echo json_encode($data);
+    }
+    
+    public function getDepartamentos(){        
+        $idDepartamento = $this->input->post("idDepartamento");
+        $result = $this->RegistracionModel->getDepartamentos($idDepartamento);
+        $data = array();
+        foreach ($result as $value) {
+            $item['id'] = $value->id;
+            $item['text'] = $value->nombre;
+            array_push($data, $item);
+        }
+        echo json_encode($data);
+    }
+    
+    public function getLocalidades(){
+        $this->load->model("RegistracionModel"); 
+        $idLocalidad = $this->input->post("idlocalidad");
+        $result = $this->RegistracionModel->getLocalidades($idLocalidad);
+        // creamos un array que pueda leer el select2
+        $data = array();
+        foreach ($result as $value) {
+            $item['id'] = $value->id;
+            $item['text'] = $value->nombre;
+            array_push($data, $item);
         }
         echo json_encode($data);
     }

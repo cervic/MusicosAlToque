@@ -12,6 +12,16 @@ class RegistracionModel extends CI_Model{
         return $this->provincia->getProvincias();
     }
     
+    public function getDepartamentos($idDepartamento){
+        $this->load->library('Departamento');
+        return $this->departamento->getDepartamentoByIdProvincia($idDepartamento);
+    }
+    
+    public function getLocalidades($idLocalidad){
+        $this->load->library('Localidad');
+        return $this->localidad->getLocalidades($idLocalidad);
+    }
+    
     public function guardar($usuario){
         $this->load->library('Usuario');
         

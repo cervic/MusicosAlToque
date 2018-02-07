@@ -9,7 +9,7 @@
 /**
  * Description of Provincia
  *
- * @author Muhuna
+ * @author Cesar Acarapi
  */
 class Provincia {
     protected $CI;

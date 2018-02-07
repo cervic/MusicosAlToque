@@ -24,11 +24,25 @@ $(document).ready(function(){
         });
     });
     
-    var data = getDataByAjax($("#urlProvincias").val());       
+    var dataForObject = getDataByAjax($("#urlProvincias").val());   
     // Se setean las provincias
-    $("#form-localidad").select2({
-        data: data
-     });
+    $('#form-provincia').select2({        
+        data: dataForObject
+    });
+    
+    // En el evento change cargamos los departamentos
+    $('#form-provincia').change(function(){        
+        $('#form-departamento').select2( {data:null} );
+        var idDepartamento = $('#form-provincia').select2('val');                
+        var parameters = {'idDepartamento': idDepartamento};   
+        //var dataForObject = getDataByAjaxWithParameters($("#urlDepartamentos").val(), parameters );        
+        $('#form-departamento').select2({
+            ajax: getDataByAjaxWithParameters($("#urlDepartamentos").val(), parameters )
+        });
+        
+        $('#contenedor-departamento').css('display','block');
+    });
+    
      
     /*$('#btnRegistrarse').click(function(){            
         $.ajax({                        

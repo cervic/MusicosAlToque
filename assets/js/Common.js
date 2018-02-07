@@ -25,4 +25,17 @@ function getDataByAjax(url){
     return data;
 }
 
+function getDataByAjaxWithParameters(url, parameters){   
+    return {
+      type: 'POST',
+      url: url,
+      dataType: 'json',
+      data: parameters,
+      async: false,
+      processResults: function(data){
+       return {results: data};   
+      }      
+    };        
+}
+
 
