@@ -27,6 +27,11 @@ class RegistracionModel extends CI_Model{
         return $this->barrio->getBarriosByIdLocalidad($idLocalidad);
     }
     
+    public function getInstrumentos() {
+        $this->load->library('Instrumento');
+        return $this->instrumento->getInstrumentos();
+    }
+    
     public function guardar($usuario){
         $this->load->library('Usuario');
         

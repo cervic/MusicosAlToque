@@ -24,10 +24,10 @@ $(document).ready(function(){
         });
     });
     
-    var dataForObject = getDataByAjax($("#urlProvincias").val());   
+    var data = getDataByAjax($("#urlProvincias").val());   
     // Se setean las provincias
     $('#form-provincia').select2({        
-        data: dataForObject
+        data: data
     });
     
     // En el evento change cargamos los departamentos
@@ -67,8 +67,11 @@ $(document).ready(function(){
         });
         $('#contenedor-localidad').css('display','block');
     });
+    data = getDataByAjax($("#urlInstrumentos").val()); 
+    $('#form-instrumento').select2({
+       data: data 
+    });
     
-     
     /*$('#btnRegistrarse').click(function(){            
         $.ajax({                        
             type: 'POST',

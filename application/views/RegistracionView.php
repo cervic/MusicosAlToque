@@ -103,7 +103,7 @@
                             <div class="form-bottom">
                                 <div class="form-group">
                                     <label class="sr-only" for="form-facebook">Instrumento</label>
-                                    <select name="form-localidad" id="form-localidad" class="form-control select2" style="width: 200px" data-placeholder="Localidad" >
+                                    <select name="form-instrumento" id="form-instrumento" class="form-control select2" style="width: 200px" data-placeholder="Instrumento" >
                                         <option value=""></option>
                                     </select>
                                 </div>
@@ -134,7 +134,8 @@
 <input type="hidden" id="urlDepartamentos" value="<?php echo base_url('registracion/getDepartamentos'); ?>">
 <input type="hidden" id="urlLocalidades" value="<?php echo base_url('registracion/getLocalidades'); ?>">
 <input type="hidden" id="urlBarrios" value="<?php echo base_url('registracion/getBarrios'); ?>">
-<?php //echo form_close(); ?>
+<input type="hidden" id="urlInstrumentos" value="<?php echo base_url('registracion/getInstrumentos')?>">
+
 <script src="<?php echo base_url('assets/js/progressRegistration.js') . "?" . date("D M d, Y G:i"); ?>" type="text/javascript"></script>
 <script src="<?php echo base_url('assets/js/scripts/registracion.js') . "?" . date("D M d, Y G:i"); ?>" type="text/javascript"></script>
 

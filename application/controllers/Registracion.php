@@ -70,6 +70,17 @@ class Registracion extends CI_Controller{
         echo json_encode($data);
     }
     
+    public function getInstrumentos() {
+        $result = $this->RegistracionModel->getInstrumentos();
+        $data = array();
+        foreach ($result as $value) {
+            $item['id'] = $value->id;
+            $item['text'] = $value->nombre;
+            array_push($data, $item);
+        }
+        echo json_encode($data);
+    }
+    
     public function guardar(){        
         $this->load->helper('form');
         $this->load->model('RegistracionModel');  
