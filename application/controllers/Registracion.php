@@ -33,8 +33,8 @@ class Registracion extends CI_Controller{
     }
     
     public function getDepartamentos(){        
-        $idDepartamento = $this->input->post("idDepartamento");
-        $result = $this->RegistracionModel->getDepartamentos($idDepartamento);
+        $idProvincia = $this->input->post("idProvincia");
+        $result = $this->RegistracionModel->getDepartamentos($idProvincia);
         $data = array();
         foreach ($result as $value) {
             $item['id'] = $value->id;
@@ -44,10 +44,22 @@ class Registracion extends CI_Controller{
         echo json_encode($data);
     }
     
-    public function getLocalidades(){
-        $this->load->model("RegistracionModel"); 
-        $idLocalidad = $this->input->post("idlocalidad");
-        $result = $this->RegistracionModel->getLocalidades($idLocalidad);
+    public function getLocalidades(){        
+        $idDepartamento = $this->input->post("idDepartamento");
+        $result = $this->RegistracionModel->getLocalidades($idDepartamento);
+        // creamos un array que pueda leer el select2
+        $data = array();
+        foreach ($result as $value) {
+            $item['id'] = $value->id;
+            $item['text'] = $value->nombre;
+            array_push($data, $item);
+        }
+        echo json_encode($data);
+    }
+    
+    public function getBarrios(){
+        $idLocalidad = $this->input->post("idLocalidad");
+        $result = $this->RegistracionModel->getBarrios($idLocalidad);
         // creamos un array que pueda leer el select2
         $data = array();
         foreach ($result as $value) {

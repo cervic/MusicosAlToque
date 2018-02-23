@@ -14,10 +14,9 @@ class Localidad {
     public function getLocalidadesByIdDepartamento($idDepartamento){
         try{
             $this->CI->db->select('id,nombre');
-            $this->CI->db->where(array("id_departamento" => $idDepartamento)); 
-            $result = $this->CI->get('localidades');
-            
-            return $result;
+            $this->CI->db->where('id_departamento', $idDepartamento); 
+            $result = $this->CI->db->get('localidades');            
+            return $result->result();
         }catch (Exception $e){
             return $e;
         }

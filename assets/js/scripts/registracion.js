@@ -31,16 +31,41 @@ $(document).ready(function(){
     });
     
     // En el evento change cargamos los departamentos
-    $('#form-provincia').change(function(){        
-        $('#form-departamento').select2( {data:null} );
-        var idDepartamento = $('#form-provincia').select2('val');                
-        var parameters = {'idDepartamento': idDepartamento};   
-        //var dataForObject = getDataByAjaxWithParameters($("#urlDepartamentos").val(), parameters );        
-        $('#form-departamento').select2({
-            ajax: getDataByAjaxWithParameters($("#urlDepartamentos").val(), parameters )
-        });
+    $('#form-provincia').change(function(){
+        $('#contenedor-departamento').css('display','none');
+        $('#contenedor-localidad').css('display','none');
+        $('#contenedor-barrio').css('display','none');
         
-        $('#contenedor-departamento').css('display','block');
+        var idProvincia = $('#form-provincia').select2('val');
+        if(idProvincia !== '2' ) {  // 5001
+            if ($('#contenedor-departamento').css('display') === 'block')
+                $('#form-departamento').val(null).trigger('change');
+            
+            var parameter = {'idProvincia': idProvincia};           
+            $('#form-departamento').select2({
+                ajax: getDataByAjaxWithParameters($("#urlDepartamentos").val(), parameter )
+            });        
+            $('#contenedor-departamento').css('display','block');
+        } else {
+            var parameter = {'idLocalidad': 5001};           
+            $('#form-barrio').select2({
+                ajax: getDataByAjaxWithParameters($("#urlBarrios").val(), parameter )
+            });
+            $('#contenedor-barrio').css('display','block');
+        }
+    });
+    
+    $('#form-departamento').change(function(){
+        if ($('#contenedor-localidad').css('display') === 'block')
+            $('#form-localidad').val(null).trigger('change');
+        
+        var idDepartamento = $('#form-departamento').select2('val');
+        alert(idDepartamento);
+        var parameter = { 'idDepartamento': idDepartamento };
+        $('#form-localidad').select2({
+           ajax: getDataByAjaxWithParameters($('#urlLocalidades').val(), parameter ) 
+        });
+        $('#contenedor-localidad').css('display','block');
     });
     
      

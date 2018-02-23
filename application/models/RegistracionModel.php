@@ -12,14 +12,19 @@ class RegistracionModel extends CI_Model{
         return $this->provincia->getProvincias();
     }
     
-    public function getDepartamentos($idDepartamento){
+    public function getDepartamentos($idProvincia){
         $this->load->library('Departamento');
-        return $this->departamento->getDepartamentoByIdProvincia($idDepartamento);
+        return $this->departamento->getDepartamentoByIdProvincia($idProvincia);
     }
     
-    public function getLocalidades($idLocalidad){
+    public function getLocalidades($idDepartamento){
         $this->load->library('Localidad');
-        return $this->localidad->getLocalidades($idLocalidad);
+        return $this->localidad->getLocalidadesByIdDepartamento($idDepartamento);
+    }
+    
+    public function getBarrios($idLocalidad){
+        $this->load->library('Barrio');
+        return $this->barrio->getBarriosByIdLocalidad($idLocalidad);
     }
     
     public function guardar($usuario){
