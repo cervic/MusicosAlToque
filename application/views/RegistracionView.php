@@ -30,7 +30,7 @@
                             <div class="form-bottom">
                                 <div class="form-group">
                                     <label class="sr-only" for="form-first-name">Nombre</label>
-                                    <input type="text" name="form-first-name" placeholder="Nombre..." class="form-first-name form-control" id="form-first-name">
+                                    <input type="text" name="form-first-name" placeholder="Nombre..." class="form-first-name form-control" id="form-first-name" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-last-name">Apellido</label>
@@ -75,7 +75,7 @@
                             <div class="form-bottom">
                                 <div class="form-group">
                                     <label class="sr-only" for="form-email">Email</label>
-                                    <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+                                    <input type="email" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-password">Password</label>
@@ -108,8 +108,8 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="form-twitter">Edad</label>
-                                    <input type="text" name="form-twitter" placeholder="Edad" class="form-twitter form-control" id="form-twitter">
+                                    <label class="sr-only" for="form-twitter">Fecha de nacimiento</label>
+                                    <input type="date" name="form-fecha-nacimiento" id="form-fecha-nacimiento" placeholder="Fecha nacimiento" class="form-control" id="form-twitter">
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-google-plus">Estilo Musical</label>
