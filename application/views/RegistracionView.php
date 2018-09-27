@@ -38,9 +38,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-about-yourself">De donde sos</label>
-                                    <select name="form-provincia" id="form-provincia" class="form-control select2" style="width: 200px" data-placeholder="Provincia">
+                                    <div style='display: block'>
+                                        <select name="form-provincia" id="form-provincia" class="form-control select2" style="width: 200px" data-placeholder="Provincia">
                                         <option value=""></option>
                                     </select>
+                                    </div>                                    
                                     <div id="contenedor-departamento" style='display:none'>
                                         <select name="form-departamento" id="form-departamento" class="form-control select2" style="width: 200px" data-placeholder="Departamento" >
                                             <option value=""></option>
@@ -55,11 +57,9 @@
                                         <select name="form-barrio" id="form-barrio" class="form-control select2" style="width: 200px" data-placeholder="Barrios" >
                                             <option value=""></option>
                                         </select>
-                                    </div>
-                                    <!--textarea name="form-about-yourself" placeholder="De dónde Sos." 
-                                                            class="form-about-yourself form-control" id="form-about-yourself"></textarea-->
+                                    </div>                                   
                                 </div>
-                                <button type="button" class="btn btn-next">Siguente</button>
+                                <button type="button" class="btn btn-next">Siguiente</button>
                             </div>
                         </fieldset>
                         <fieldset class="fieldsetWidth">

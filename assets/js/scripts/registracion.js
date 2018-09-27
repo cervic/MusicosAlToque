@@ -24,10 +24,10 @@ $(document).ready(function(){
         });
     });
     
-    var data = getDataByAjax($("#urlProvincias").val());   
     // Se setean las provincias
     $('#form-provincia').select2({        
-        data: data
+        data: getDataByAjax($("#urlProvincias").val())   
+        //containerCssClass: 'select2-error'
     });
     
     // En el evento change cargamos los departamentos
@@ -37,39 +37,42 @@ $(document).ready(function(){
         $('#contenedor-barrio').css('display','none');
         
         var idProvincia = $('#form-provincia').select2('val');
-        if(idProvincia !== '2' ) {  // 5001
-            if ($('#contenedor-departamento').css('display') === 'block')
-                $('#form-departamento').val(null).trigger('change');
-            
-            var parameter = {'idProvincia': idProvincia};           
+        $('#form-departamento').empty(); // limpio el combo de departamentos
+        if(idProvincia !== '2' ) {  // 5001            
+            var parameter = {'idProvincia': idProvincia};   
+
             $('#form-departamento').select2({
-                ajax: getDataByAjaxWithParameters($("#urlDepartamentos").val(), parameter )
-            });        
+                data: getDataByAjaxWithParameters($("#urlDepartamentos").val(), parameter)         
+            });    
+            $('#form-departamento').select2('val','');
             $('#contenedor-departamento').css('display','block');
+            $('#form-departamento').val(null).trigger('change');
+            
+            if ($('#contenedor-localidad').css('display') === 'block')
+                $('#form-localidad').val(null).trigger('change');
         } else {
-            var parameter = {'idLocalidad': 5001};           
+            var parameter = {'idLocalidad': 5001}; 
             $('#form-barrio').select2({
-                ajax: getDataByAjaxWithParameters($("#urlBarrios").val(), parameter )
+                data: getDataByAjaxWithParameters($("#urlBarrios").val(), parameter )
             });
             $('#contenedor-barrio').css('display','block');
+            $('#form-barrio').val(null).trigger('change');
         }
     });
     
     $('#form-departamento').change(function(){
-        if ($('#contenedor-localidad').css('display') === 'block')
-            $('#form-localidad').val(null).trigger('change');
-        
+        $('#form-localidad').empty(); // limpio el combo de localidades
         var idDepartamento = $('#form-departamento').select2('val');
-        alert(idDepartamento);
         var parameter = { 'idDepartamento': idDepartamento };
         $('#form-localidad').select2({
-           ajax: getDataByAjaxWithParameters($('#urlLocalidades').val(), parameter ) 
+           data: getDataByAjaxWithParameters($('#urlLocalidades').val(), parameter ) 
         });
         $('#contenedor-localidad').css('display','block');
+        $('#form-localidad').val(null).trigger('change');
     });
-    data = getDataByAjax($("#urlInstrumentos").val()); 
+    
     $('#form-instrumento').select2({
-       data: data 
+       data: getDataByAjax($("#urlInstrumentos").val()) 
     });
     
     /*$('#btnRegistrarse').click(function(){            

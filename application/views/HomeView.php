@@ -3,19 +3,15 @@
     <h1>Buscando Músicos?</h1>		
     <form id="buscador" action="<?php echo base_url('Resultados/index')?>" >
         <fieldset>
-            <!--input type="search" id="inputsearch" placeholder="Buscar..."-->
             <select id="cboInstrumento" class="select2" data-placeholder="Instrumento" style="width:200px">
                 <option value=""></option>
-            </select>
-            <!-- prueba dropdown-->	
-            <!--<label for="country_name"></label><input id="country_name" name="country_name" type="text" list="country" placeholder="Localidad"/>-->
+            </select>          
             <select id="cboLocalidad" class="select2"  data-placeholder="Localidad" style="width: 200px">
                 <option value=""></option>
             </select>
             <button type="submit"id="btn-search">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </button>
-
         </fieldset>
     </form>			
 </section>

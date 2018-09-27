@@ -26,23 +26,26 @@ jQuery(document).ready(function () {
     $('.registration-form .btn-next').on('click', function () {
         var parent_fieldset = $(this).parents('fieldset');
         var next_step = true;
-
-        /*parent_fieldset.find('input[type="text"], input[type="password"], textarea').each(function () {
-            if ($(this).val() === "") {
-                $(this).addClass('input-error');
-                next_step = false;
+        parent_fieldset.find('input[type="text"], input[type="password"], textarea, select').each(function () {
+            if($(this).is('select')) { 
+                next_step = validationSelect2($(this), next_step); 
             } else {
-                $(this).removeClass('input-error');
-            }
-        });*/
+                if ($(this).val() === "") {
+                    $(this).addClass('input-error');                
+                    next_step = false;
+                } else {
+                    $(this).removeClass('input-error');
+                } 
+            }                                       
+        });
 
         if (next_step) {
             parent_fieldset.fadeOut(400, function () {
                 $(this).next().fadeIn();
             });
-        }
-
+        }        
     });
+    
 
     // previous step
     $('.registration-form .btn-previous').on('click', function () {
@@ -64,6 +67,15 @@ jQuery(document).ready(function () {
         });
 
     });
-
-
+    
+    function validationSelect2(select, isValid){
+        if ((select.val() === "" || select.val() === null) && select.parent().css("display") === "block") {
+            $("#select2-" + select[0].id + "-container").parent().addClass("myErrorClass");
+            isValid = false;
+        }else{
+            $("#select2-" + select[0].id + "-container").parent().removeClass("myErrorClass");            
+        }
+        
+        return isValid;
+    }
 });

@@ -25,7 +25,23 @@ function getDataByAjax(url){
     return data;
 }
 
-function getDataByAjaxWithParameters(url, parameters){   
+function getDataByAjaxWithParameters(url, parameters){
+    var data = null;
+    $.ajax({
+        type: 'POST',
+        url: url,
+        dataType: 'json',
+        data: parameters,
+        async: false,
+        success: function(result) {
+           data = result;
+        }
+    });
+    
+    return data;
+}
+
+function geDataServer(url, parameters){   
     return {
       type: 'POST',
       url: url,
