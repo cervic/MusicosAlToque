@@ -5,6 +5,7 @@ class RegistracionModel extends CI_Model{
     
     function __construct() {
         parent::__construct();
+        $this->load->library('Usuario');
     }
     
     public function getProvincias(){
@@ -32,8 +33,13 @@ class RegistracionModel extends CI_Model{
         return $this->instrumento->getInstrumentos();
     }
     
+    public function getEstilosMusicales() {
+        $this->load->library('EstiloMusical');
+        return $this->estilomusical->getEstilosMusicales();
+    }
+    
     public function guardar($usuario){
-        $this->load->library('Usuario');
+        // $this->load->library('Usuario');
         
         $campos = array(
             'nombre' => $usuario['nombre'],
@@ -44,6 +50,12 @@ class RegistracionModel extends CI_Model{
         );
         
         return $this->usuario->save($campos);        
+    }
+    
+    public function validation($data) {
+        switch($data['key']){
+            case 'email': return $this->usuario->getUsuarioByEmail($data['value']);                
+        }        
     }
 }
 

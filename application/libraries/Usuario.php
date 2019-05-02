@@ -31,6 +31,16 @@ class Usuario {
         }
     }
     
+    public function getUsuarioByEmail($email) {
+                try{            
+            $this->CI->db->where(array('email' => $email));
+            $consulta = $this->CI->db->get('usuario');                       
+            return  $consulta->row();
+        }catch(Exception $e){
+            return $e;
+        }
+    }
+    
     public function getUsuarioByEmailAndPassword($campos){
         try{            
             $this->CI->db->where(array('email' => $campos['email'],
@@ -52,7 +62,6 @@ class Usuario {
         );
         
         return $errors;
-    }
-   
+    }   
 }
 

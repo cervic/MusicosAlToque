@@ -81,6 +81,25 @@ class Registracion extends CI_Controller{
         echo json_encode($data);
     }
     
+    public function getEstilosMusicales() {
+        $result = $this->RegistracionModel->getEstilosMusicales();
+        $data = array();
+        foreach ($result as $value) {
+            $item['id'] = $value->id;
+            $item['text'] = $value->nombre;
+            array_push($data, $item);
+        }
+        
+        echo json_encode($data);
+    }
+    
+    public function validationField() {
+        $data = $this->input->post('data');        
+        $result = $this->RegistracionModel->validation($data);
+        echo json_encode($result);
+    }
+    
+    
     public function guardar(){        
         $this->load->helper('form');
         $this->load->model('RegistracionModel');  

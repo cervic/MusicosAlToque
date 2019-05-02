@@ -18,7 +18,7 @@ jQuery(document).ready(function () {
      */
     $('.registration-form fieldset:first-child').fadeIn('slow');
 
-    $('.registration-form input[type="text"], .registration-form input[type="password"], .registration-form textarea').on('focus', function () {
+    $('.registration-form input[type="text"], .registration-form input[type="password"], .registration-form textarea').on('focus', function () {        
         $(this).removeClass('input-error');
     });
 
@@ -26,16 +26,11 @@ jQuery(document).ready(function () {
     $('.registration-form .btn-next').on('click', function () {
         var parent_fieldset = $(this).parents('fieldset');
         var next_step = true;
-        parent_fieldset.find('input[type="text"], input[type="password"], textarea, select').each(function () {
+        parent_fieldset.find('input[type="text"], input[type="password"], input[type="email"], textarea, select').each(function () {                        
             if($(this).is('select')) { 
                 next_step = validationSelect2($(this), next_step); 
             } else {
-                if ($(this).val() === "") {
-                    $(this).addClass('input-error');                
-                    next_step = false;
-                } else {
-                    $(this).removeClass('input-error');
-                } 
+                next_step = validationInput($(this), next_step);
             }                                       
         });
 
@@ -43,7 +38,11 @@ jQuery(document).ready(function () {
             parent_fieldset.fadeOut(400, function () {
                 $(this).next().fadeIn();
             });
-        }        
+        }
+        
+        var parameters = {data: {field:'usuario', text: 'Hola'}}
+        var result = getDataByAjaxWithParameters($("#urlValidationField").val(), parameters);
+        alert(result.field);
     });
     
 
@@ -53,29 +52,18 @@ jQuery(document).ready(function () {
             $(this).prev().fadeIn();
         });
     });
-
-    // submit
-    $('.registration-form').on('submit', function (e) {
-
-        $(this).find('input[type="text"], input[type="password"], textarea').each(function () {
-            if ($(this).val() === "") {
-                e.preventDefault();
-                $(this).addClass('input-error');
+    
+    function Validation(context) {
+        var isValid = true;
+        $(context).find('input[type="text"], input[type="password"], input[type="email"], input[type="date"], textarea, select').each(function () {                 
+            if($(this).is('select')) { 
+                isValid = validationSelect2($(context), isValid); 
             } else {
-                $(this).removeClass('input-error');
+                isValid = validationInput($(context), isValid);
+            } 
+            if (!isValid) {
+                e.preventDefault();                
             }
         });
-
-    });
-    
-    function validationSelect2(select, isValid){
-        if ((select.val() === "" || select.val() === null) && select.parent().css("display") === "block") {
-            $("#select2-" + select[0].id + "-container").parent().addClass("myErrorClass");
-            isValid = false;
-        }else{
-            $("#select2-" + select[0].id + "-container").parent().removeClass("myErrorClass");            
-        }
-        
-        return isValid;
     }
 });

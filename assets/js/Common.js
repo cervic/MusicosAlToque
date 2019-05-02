@@ -55,3 +55,25 @@ function geDataServer(url, parameters){
 }
 
 
+    function validationSelect2(select, isValid){
+        if (!select.context.validity.valid && select.parent().css("display") === "block") {
+            $("#select2-" + select[0].id + "-container").parent().addClass("myErrorClass");
+            isValid = false;
+        }else{
+            $("#select2-" + select[0].id + "-container").parent().removeClass("myErrorClass");            
+        }
+        
+        return isValid;
+    }
+    
+    function validationInput(input, isValid) {
+        if (!input.context.validity.valid) {
+            input.addClass('input-error');                
+            isValid = false;
+        } else {
+            input.removeClass('input-error');
+        }
+        
+        return isValid;
+    }
+

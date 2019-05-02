@@ -3,7 +3,7 @@
 /**
  * Description of Localidad
  *
- * @author Muhuna
+ * @author Cesar Acarapi
  */
 class Localidad {
     protected $CI;

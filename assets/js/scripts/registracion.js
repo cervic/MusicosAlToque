@@ -24,10 +24,14 @@ $(document).ready(function(){
         });
     });
     
+        // submit
+    $('.registration-form').on('submit', function (e) {       
+        Validation(this);
+    }); 
+    
     // Se setean las provincias
     $('#form-provincia').select2({        
-        data: getDataByAjax($("#urlProvincias").val())   
-        //containerCssClass: 'select2-error'
+        data: getDataByAjax($("#urlProvincias").val())
     });
     
     // En el evento change cargamos los departamentos
@@ -75,6 +79,9 @@ $(document).ready(function(){
        data: getDataByAjax($("#urlInstrumentos").val()) 
     });
     
+    $('#form-estilo-musical').select2({
+       data: getDataByAjax($("#urlEstilosMusicales").val()) 
+    });
     /*$('#btnRegistrarse').click(function(){            
         $.ajax({                        
             type: 'POST',
