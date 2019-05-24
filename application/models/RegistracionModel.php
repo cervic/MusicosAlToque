@@ -38,24 +38,28 @@ class RegistracionModel extends CI_Model{
         return $this->estilomusical->getEstilosMusicales();
     }
     
-    public function guardar($usuario){
-        // $this->load->library('Usuario');
-        
-        $campos = array(
-            'nombre' => $usuario['nombre'],
-            'apellido' => $usuario['apellido'],
-            'nombre_usuario' => $usuario['nombre_usuario'],
-            'email' => $usuario['email'],
-            'password' => $usuario['password']            
-        );
-        
-        return $this->usuario->save($campos);        
+    public function validation($data) {
+        switch($data['field']){
+            case 'email': 
+                $data = $this->usuario->getUsuarioByEmail($data['text']);
+                return $this->createResponse($data, "Este email ya esta registrado");                
+            case 'usuario': 
+                $data = $this->usuario->getUsuarioByUsuario($data['text']); 
+                return $this->createResponse($data, "Este usuario ya existe");
+            default : 
+                return $this->createResponse($data, "");
+        }     
     }
     
-    public function validation($data) {
-        switch($data['key']){
-            case 'email': return $this->usuario->getUsuarioByEmail($data['value']);                
-        }        
+    function createResponse($data, $message) {
+        if(empty($data)) {
+            $result["isValid"] = true;
+            $result["message"] = "";
+        } else {
+            $result["isValid"] = false;
+            $result["message"] = $message;
+        }
+        return $result;
     }
 }
 

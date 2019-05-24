@@ -26,23 +26,12 @@ jQuery(document).ready(function () {
     $('.registration-form .btn-next').on('click', function () {
         var parent_fieldset = $(this).parents('fieldset');
         var next_step = true;
-        parent_fieldset.find('input[type="text"], input[type="password"], input[type="email"], textarea, select').each(function () {                        
-            if($(this).is('select')) { 
-                next_step = validationSelect2($(this), next_step); 
-            } else {
-                next_step = validationInput($(this), next_step);
-            }                                       
-        });
-
+        next_step = validationFieldset(parent_fieldset, next_step);
         if (next_step) {
             parent_fieldset.fadeOut(400, function () {
                 $(this).next().fadeIn();
             });
-        }
-        
-        var parameters = {data: {field:'usuario', text: 'Hola'}}
-        var result = getDataByAjaxWithParameters($("#urlValidationField").val(), parameters);
-        alert(result.field);
+        }                
     });
     
 
@@ -51,19 +40,5 @@ jQuery(document).ready(function () {
         $(this).parents('fieldset').fadeOut(400, function () {
             $(this).prev().fadeIn();
         });
-    });
-    
-    function Validation(context) {
-        var isValid = true;
-        $(context).find('input[type="text"], input[type="password"], input[type="email"], input[type="date"], textarea, select').each(function () {                 
-            if($(this).is('select')) { 
-                isValid = validationSelect2($(context), isValid); 
-            } else {
-                isValid = validationInput($(context), isValid);
-            } 
-            if (!isValid) {
-                e.preventDefault();                
-            }
-        });
-    }
+    });           
 });

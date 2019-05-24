@@ -3,28 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$(document).ready(function(){   
-    $("#frmRegistracion").on('submit', function(evt){
-        evt.preventDefault();  
-        $.ajax({                        
-            type: 'POST',
-            url: $( '#frmRegistracion' ).attr( 'action' ),
-            dataType: 'json',
-            data: $('#frmRegistracion').serialize(),
-            cache: false,
-            success:function(data){
-                $( ".contenedor_error" ).empty();
-                if(!data.isValid)
-                    showErrors(data);
-                else{
-                    cleanForm('frmRegistracion');
-                    $('#LayoutModal').modal('toggle');
-                }                     
-            }
-        });
-    });
-    
-        // submit
+$(document).ready(function(){                  
     $('.registration-form').on('submit', function (e) {       
         Validation(this);
     }); 
@@ -109,5 +88,34 @@ function showErrors(data){
     $('#errorEmail').html(data.txtEmail);
     $('#errorPassword').html(data.txtPassword);
     $('#errorConfirmPassword').html(data.txtConfirmPassword);
+}
+$("#form-usuario").change( function(event) {     
+    var parameters = { data: { field: 'usuario', text: event.target.value } };    
+    showErrorInput(parameters, "error-usuario", this);    
+});
+
+$("#form-email").change( function(event) {    
+    var parameters = { data: { field: 'email', text: event.target.value } };    
+    showErrorInput(parameters, "error-email", this);    
+});
+
+$("#form-password").change( function(evt) {
+    validationPassword(evt);
+});
+$("#form-confirm-password").change( function(evt) {
+    validationPassword(evt);
+});
+
+function validationPassword(evt) {    
+    var pass1 = $("#form-password").val();
+    var pass2 = $("#form-confirm-password").val();        
+    if (pass1 !== "" && pass2 !== "" && pass1 !== pass2) {        
+        $("#error-password").css("display", "block");
+        $("#error-password").text("Las contraseñas ingresadas no son iguales");
+        evt.target.setCustomValidity("Las contraseñas ingresadas no son iguales");
+    } else {
+        $("#error-password").css("display", "none");
+        evt.target.setCustomValidity("");
+    }    
 }
 

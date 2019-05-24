@@ -16,7 +16,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3 form-box">                        	
-                    <form role="form" action="<?php echo base_url('registracion/Guardar') ?>" method="post" class="registration-form" novalidate>
+                    <form role="form" action="<?php echo base_url('FinRegistracion/index') ?>" method="post" class="registration-form" if="registrationForm" novalidate>
                         <fieldset class="fieldsetWidth">
                             <div class="form-top">
                                 <div class="form-top-left">
@@ -30,11 +30,11 @@
                             <div class="form-bottom">
                                 <div class="form-group">
                                     <label class="sr-only" for="form-first-name">Nombre</label>
-                                    <input type="text" name="form-first-name" placeholder="Nombre..." class="form-first-name form-control" id="form-first-name" required>
+                                    <input type="text" name="form-nombre" placeholder="Nombre..." class="form-first-name form-control" id="form-nombre" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-last-name">Apellido</label>
-                                    <input type="text" name="form-last-name" placeholder="Apellido..." class="form-last-name form-control" id="form-last-name" required>
+                                    <input type="text" name="form-apellido" placeholder="Apellido..." class="form-last-name form-control" id="form-apellido" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-about-yourself">De donde sos</label>
@@ -74,17 +74,24 @@
                             </div>
                             <div class="form-bottom">
                                 <div class="form-group">
+                                    <div id="error-usuario"></div>
+                                    <label class="sr-only" for="form-email">Usuario</label>
+                                    <input type="text" name="form-usuario" placeholder="Usuario..." class="form-control" id="form-usuario" required>
+                                </div>
+                                <div class="form-group">
+                                    <div id="error-email"></div>
                                     <label class="sr-only" for="form-email">Email</label>
                                     <input type="email" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email" required>
                                 </div>
                                 <div class="form-group">
+                                    <div id="error-password"></div>
                                     <label class="sr-only" for="form-password">Password</label>
                                     <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-repeat-password">Repetir password</label>
-                                    <input type="password" name="form-repeat-password" placeholder="Repetir password..." 
-                                           class="form-repeat-password form-control" id="form-repeat-password" required>
+                                    <input type="password" name="form-confirm-password" placeholder="Repetir password..." 
+                                           class="form-repeat-password form-control" id="form-confirm-password" required>
                                 </div>
                                 <button type="button" class="btn btn-previous">Atras</button>
                                 <button type="button" class="btn btn-next">Siguiente</button>
@@ -109,7 +116,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-twitter">Fecha de nacimiento</label>
-                                    <input type="date" name="form-fecha-nacimiento" id="form-fecha-nacimiento" placeholder="Fecha nacimiento" class="form-control" id="form-twitter" required>
+                                    <input type="date" name="form-fecha-nacimiento" id="form-fecha-nacimiento" placeholder="Fecha nacimiento" class="form-control" id="form-fecha-nacimiento" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-google-plus">Estilo Musical</label>
@@ -119,10 +126,10 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="form-google-plus">Artistas/Bandas de tu gusto</label>
-                                    <input type="text" name="form-google-plus" placeholder="Artistas/Bandas de tu gusto" class="form-google-plus form-control" id="form-google-plus" required>
+                                    <input type="text" name="form-artista-banda" placeholder="Artistas/Bandas de tu gusto" class="form-google-plus form-control" id="form-artista-banda" required>
                                 </div>
                                 <button type="button" class="btn btn-previous">Atras</button>
-                                <input type="submit" class="btn" value="Registrarme!">
+                                <input type="submit" class="btn" id="btnRegistrar" value="Registrarme!">
                             </div>
                         </fieldset>		                    
                     </form>		                    

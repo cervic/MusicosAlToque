@@ -2,38 +2,56 @@
 
 class Usuario {
     protected $CI;
-    function __construct() {
+    protected $library;
+            function __construct() {
         $this->CI =& get_instance();
+        $this->CI->load->library('Musico');
     }
     
-    public function save($campos){
-        // Validaciones codeignither
-        $this->CI->form_validation->set_rules('txtUsuario', 'Usuario', 'is_unique[usuario.nombre_usuario]',
-                array ('is_unique' => 'Ya existe este usuario'));
-        $this->CI->form_validation->set_rules('txtEmail', 'Email', 'is_unique[usuario.email]',
-                array ('is_unique' => 'Ya existe este email'));        
-        
+    public function save($campos){        
         try{
-            if($this->CI->form_validation->run()){
-                $this->CI->db->insert('usuario', $campos);
-                $insert_id = $this->CI->db->insert_id();
-
-                return array(
-                    'isValid' => true,
-                    'usuario' => $campos['nombre_usuario'],
-                    'id' => $insert_id
-                );        
-            }else{
-                return $this->getErrorsSave();
-            }
+            $this->CI->db->trans_start();
+            $campos_usuario = array(
+                'nombre' => $campos['nombre'],
+                'apellido' => $campos['apellido'],
+                'nombre_usuario' => $campos['nombre_usuario'],
+                'email' => $campos['email'],
+                'password' => $campos['password'],                  
+                'fecha_nacimiento' => $campos['fechaNacimiento'],
+                'id_estilo_musical' => $campos['estiloMusical'],                
+            );            
+            $this->CI->db->insert('usuario', $campos_usuario);
+            $id_usuario = $this->CI->db->insert_id();
+            $campos_musico = array(
+                'id_usuario' => $id_usuario,
+                'id_localidad' => $campos['id_localidad'],
+                'id_barrio' => $campos['id_barrio'],
+                'id_instrumento_musical' => $campos['instrumento']
+            );
+            $this->CI->musico->save($campos_musico);
+            $this->CI->db->trans_complete();
+            return array(                
+                'usuario' => $campos['nombre_usuario'],
+                'id' => $id_usuario
+            );        
         }catch(Exception $e){
             return $e;
         }
     }
     
     public function getUsuarioByEmail($email) {
-                try{            
+        try{            
             $this->CI->db->where(array('email' => $email));
+            $consulta = $this->CI->db->get('usuario');                       
+            return  $consulta->row();
+        }catch(Exception $e){
+            return $e;
+        }
+    }
+    
+    public function getUsuarioByUsuario($usuario) {
+        try{            
+            $this->CI->db->where(array('nombre_usuario' => $usuario));
             $consulta = $this->CI->db->get('usuario');                       
             return  $consulta->row();
         }catch(Exception $e){
