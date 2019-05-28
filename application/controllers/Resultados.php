@@ -17,8 +17,19 @@ class Resultados extends CI_Controller{
     }
     
     public function index(){
+        $data['response'] = $this->buscar();
+        
         $this->load->view('layout/Encabezado');
-        $this->load->view('ResultadosView');
+        $this->load->view('ResultadosView', $data);
         $this->load->view('layout/PiePagina');
+        json_encode($data);
+    }
+    
+    public function buscar() {
+        $this->load->model('ResultadoModel');
+        $filtros['musico.id_instrumento_musical'] = $this->input->post('cboIntrumento');
+        $filtros['provincias.id'] = $this->input->post('cboProvincia');
+        $result = $this->ResultadoModel->getResultados($filtros);
+        return $result;
     }
 }

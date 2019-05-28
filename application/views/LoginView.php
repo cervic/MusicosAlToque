@@ -8,7 +8,7 @@
             <?php echo form_open(base_url('Login/ingresar'), array('id' => 'frmLogin')) ?> 
                 <div class="contenedor_error" id="login"></div>
                 <div class="form-group">
-                      <label for="exampleInputEmail1">Correo Electrónico</label>
+                      <label for="exampleInputEmail1">Correo Electrónico/Usuario</label>
                       <input type="input" class="form-control" id="txtEmail" name="txtEmail" placeholder="Email">
                 </div>
                 <div class="contenedor_error" id="errorEmail"></div>

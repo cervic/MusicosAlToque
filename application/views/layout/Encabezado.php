@@ -94,9 +94,8 @@ and open the template in the editor.
                                     echo "<ul class='nav navbar-nav navbar-right'>
                                             <a class='btn btn-default' href='";
                                             echo base_url("Registracion/index"); 
-                                            echo "'>Registrate</a>
-                                            <!--button  class='btn btn-default' data-toggle='modal' data-target='#LayoutModal' id='btnModalRegistracion'> Registrate</button-->
-                                            <button  class='btn btn-default' data-toggle='modal' data-target='#LayoutModal' id='btnModalLogin'> Iniciar Sesión</button>                                  
+                                            echo "'>Registrate</a>                                            
+                                            <button  class='btn btn-default' type='button' data-toggle='modal' data-target='#LayoutModal' id='btnModalLogin'> Iniciar Sesión</button>                                  
                                          </ul>";
                                 }
                             ?>

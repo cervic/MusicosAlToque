@@ -1,12 +1,12 @@
 
 <section class="busqueda" >		
     <h1>Buscando Músicos?</h1>		
-    <form id="buscador" action="<?php echo base_url('Resultados/index')?>" >
+    <form id="buscador" action="<?php echo base_url('Resultados/index')?>" method="post" >
         <fieldset>
-            <select id="cboInstrumento" class="select2" data-placeholder="Instrumento" style="width:200px">
+            <select id="cboInstrumento" name="cboIntrumento" class="select2" data-placeholder="Instrumento" style="width:200px">
                 <option value=""></option>
             </select>          
-            <select id="cboLocalidad" class="select2"  data-placeholder="Localidad" style="width: 200px">
+            <select id="cboLocalidad" name="cboProvincia" class="select2"  data-placeholder="Provincia" style="width: 200px">
                 <option value=""></option>
             </select>
             <button type="submit"id="btn-search">

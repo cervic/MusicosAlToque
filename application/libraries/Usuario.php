@@ -61,8 +61,8 @@ class Usuario {
     
     public function getUsuarioByEmailAndPassword($campos){
         try{            
-            $this->CI->db->where(array('email' => $campos['email'],
-                                       'password' => $campos['password']));
+            $where = "email = '". $campos['email']. "' or nombre_usuario = '". $campos['email']. "' and password = '".$campos['password']."'";     
+            $this->CI->db->where($where);
             $consulta = $this->CI->db->get('usuario');
             
             

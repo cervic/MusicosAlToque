@@ -6,7 +6,7 @@
 
 $(document).ready(function(){
     //Carga la partialView de registración en el modal PopUp
-    $('#btnModalRegistracion').click(function(){
+    /* $('#btnModalRegistracion').click(function(){
         $.ajax({
             type    : 'POST', 
             url     : $('#urlRegistracionView').val(),
@@ -18,18 +18,18 @@ $(document).ready(function(){
                 }
             }
         });
-    });
+    });          */
     
     // Carga la partialView de login en el modal PoUp
-    $('#btnModalLogin').click(function(){        
+    $('#btnModalLogin').click(function(){                
         $.ajax({
             type    : 'POST', 
             url     : $('#urlLoginView').val(),
             cache   : false,
-            success : function(data){ 
+            success : function(data){
                 if(data){
                     $('#modalLabel').text('Ingresar a Músicos al Toque');
-                    $('#form-content').html(data);
+                        $('#form-content').html(data);
                }
             }
         });
